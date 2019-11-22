@@ -1,0 +1,27 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Promotion Code</th>
+        <th>Discount</th>
+      </tr>
+    </thead>
+    <tbody class="products">
+      <% products.each do |product| %>
+      <tr class="index">
+        <td><%= product.name %></td>
+        <td><%= product.price %></td>
+        <td><%= product.promotions.where("promotions.active = ?", true).pluck(:code).join(', ') %></td>
+        <td><%= product.promotions.where("promotions.active = ?", true).pluck(:discount).join(', ') %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="digg_pagination">
+  <%= page_entries_info @products %>
+  <br>
+  <%= will_paginate @products if @products.present? %>
+</div>

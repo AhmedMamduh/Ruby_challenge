@@ -1,0 +1,18 @@
+default: &default
+  pool: 32
+  timeout: 5000
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+
+development:
+  <<: *default
+  database: ruby_challenge_development
+
+test:
+  <<: *default
+  database: ruby_challenge_test
+
+production:
+  <<: *default
+  database: ruby_challenge_production

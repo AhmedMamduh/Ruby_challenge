@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Promotion:</strong>
+  <%= @products_promotion.promotion %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @products_promotion.product %>
+</p>
+
+<%= link_to 'Edit', edit_products_promotion_path(@products_promotion) %> |
+<%= link_to 'Back', products_promotions_path %>

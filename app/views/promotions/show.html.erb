@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @promotion.code %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @promotion.active %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @promotion.discount %>
+</p>
+
+<%= link_to 'Edit', edit_promotion_path(@promotion) %> |
+<%= link_to 'Back', promotions_path %>
